@@ -4,25 +4,32 @@ import './Cart.css'
 const Cart = (props) => {
     const { cart } = props
     // console.log(cart);
-    const randomItem = () => {
-        const number = Math.floor(Math.random()*cart.length)
+    const randomSelectItem = () => {
+        let number = Math.floor(Math.random()*cart.length)
         console.log(number);
+    }
+
+    if(cart.length === 5){
+        alert('Dont select more items')
+    }
+
+    const chooseAgain = () => {
+        console.log('Delete');
     }
     return (
         <div className='cart_component'>
-            <h3>Selected All The Mobile Here</h3>
-            {/* <h5> Items you have select: {cart.length}</h5> */}
             {
                 cart.map((item, index) => <p
-                key={index}
-                >
-                    {item.name}</p>)
+                key={index}>
+                {item.name}</p>)
             }
-            
-
-            <button onClick={randomItem}>CHOOSE 1 FOR ME</button>
+            <button onClick={randomSelectItem}>CHOOSE 1 FOR ME</button>
             <br></br>
-            <button>CHOOSE AGAIN</button>
+            <button onClick={chooseAgain}>CHOOSE AGAIN</button>
+            <div>
+<h5>Random Select Item</h5>
+
+            </div>
         </div>
     );
 };
