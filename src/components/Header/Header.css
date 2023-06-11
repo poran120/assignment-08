@@ -1,0 +1,21 @@
+.nav_header {
+    height: 80px;
+    background: #37393b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 140px;
+    /* position: relative; */
+}
+.logo_text{
+    color: #fff;
+}
+/* .nav_header_list{
+    justify-content: space-between;
+} */
+.nav_header_list a {
+    color: #fff;
+    text-decoration: none;
+    /* font-size: 17px; */
+    margin-left: 40px;
+}
