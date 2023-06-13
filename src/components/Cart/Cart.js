@@ -5,23 +5,23 @@ const Cart = (props) => {
     const { cart } = props
     // console.log(cart);
     const randomSelectItem = () => {
-        let number = Math.floor(Math.random()*cart.length)
+        const number = Math.floor(Math.random()*cart.length)
         console.log(number);
     }
 
     if(cart.length === 5){
-        alert('Dont select more items')
+        // alert('Dont select more items')
+        // alert('return cart')
     }
 
     const chooseAgain = () => {
-        console.log('Delete');
+        console.log('Delete')
     }
     return (
         <div className='cart_component'>
             {
                 cart.map((item, index) => <p
-                key={index}>
-                {item.name}</p>)
+                key={index}>{item.name}</p>)
             }
             <button onClick={randomSelectItem}>CHOOSE 1 FOR ME</button>
             <br></br>
