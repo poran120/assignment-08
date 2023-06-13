@@ -6,8 +6,12 @@ const Cart = (props) => {
     // console.log(cart);
     const randomSelectItem = () => {
         const number = Math.floor(Math.random()*cart.length)
-        console.log(number);
+        const randomItem = cart[number];
+        return randomItem;
+        // console.log(number);
     }
+
+const selectRandomItem = randomSelectItem();
 
     if(cart.length === 5){
         // alert('Dont select more items')
@@ -27,7 +31,7 @@ const Cart = (props) => {
             <br></br>
             <button onClick={chooseAgain}>CHOOSE AGAIN</button>
             <div>
-<h5>Random Select Item</h5>
+<h5>Random Select Item : {selectRandomItem}</h5>
 
             </div>
         </div>
