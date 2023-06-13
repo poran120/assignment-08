@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
     const { cart } = props
     // console.log(cart);
+
+    const [selectedItem, setSelectedItem] = useState([]);
     const randomSelectItem = () => {
         const number = Math.floor(Math.random()*cart.length)
         const randomItem = cart[number];
-        return randomItem;
-        // console.log(number);
+        setSelectedItem(randomItem)
     }
 
-const selectRandomItem = randomSelectItem();
+// const selectRandomItem = randomSelectItem();
 
-    if(cart.length === 5){
+    // if(cart.length === 5){
         // alert('Dont select more items')
         // alert('return cart')
-    }
+    // }
 
     const chooseAgain = () => {
         console.log('Delete')
@@ -31,8 +32,9 @@ const selectRandomItem = randomSelectItem();
             <br></br>
             <button onClick={chooseAgain}>CHOOSE AGAIN</button>
             <div>
-<h5>Random Select Item : {selectRandomItem}</h5>
-
+                {/* {selectedItem &&  <h5>Random Selected Item : {selectedItem}</h5>} */}
+                <h6>Selected Item: <span className='selected_item'>{selectedItem.name}</span>
+                </h6>
             </div>
         </div>
     );
